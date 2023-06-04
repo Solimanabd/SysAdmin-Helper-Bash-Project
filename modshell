@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Enter username: " username
+read -p "Enter new shell: " shell
+echo -e "\n"
+
+chsh -s $shell $username
+
+if [ $? -eq 0 ]; then
+    echo "Shell for $username changed successfully"
+else
+    echo "Failed to change shell for $username"
+fi

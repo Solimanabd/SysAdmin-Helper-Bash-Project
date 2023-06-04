@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Enter username: " username
+read -s -p "Enter new password: " password
+echo -e "\n"
+
+echo "$username:$password" | chpasswd
+
+if [ $? -eq 0 ]; then
+    echo "Password for $username changed successfully"
+else
+    echo "Failed to change password for $username"
+fi

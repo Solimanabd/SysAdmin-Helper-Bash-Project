@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "enter username for user"
+read username
+if id "$username" >/dev/null 2>&1; then
+    echo "user already exist and it is $username information"
+    id $username
+
+else
+    echo "user does NOT exist"
+fi
+
+

@@ -1,0 +1,63 @@
+#!/bin/bash
+echo "Welcome To Soliman SysAdmin Helper Project"
+PS3='Choose your option: '
+options=("add user" "delete user" "change user password" "modify user shell" "disable user" "list users" "user information" "modify user grp_id"  "get_groups_for_all_users" "add group" "list groups" "delete group" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "add user")
+            echo "you chose add user "
+            ./adduserr
+            ;;
+        "delete user")
+            echo "you chose delete user"
+             ./deleteuserr
+            ;;
+          "change user password")
+            echo "you chose change password"
+             ./chpass
+            ;;
+      "modify user shell")
+            echo "you chose modify shell"
+             ./modshell
+            ;;
+        "disable user")
+            echo "you chose disable user"
+             ./disableuserr
+            ;;
+        "list users")
+            echo "you chose list users"
+             ./listuserr
+            ;;
+          "user information")
+            echo "you chose user information"
+            ./userinfo
+            ;;
+         "add group")
+            echo "you chose add group"
+             ./addgrp
+            ;;
+         "modify user grp_id")
+            echo "you chose modify user group id"
+             ./groupid
+            ;;
+         "get_groups_for_all_users")
+            echo "you chose get groups for all users"
+             ./displaygrpsforusers
+            ;;
+         "delete group")
+            echo "you chose delete group"
+             ./delgrp
+            ;;
+          "list groups")
+            echo "you chose list groups"
+             ./listgrp
+            ;;
+
+        "Quit")
+            echo "you chose Quit"
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done

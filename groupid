@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Enter username: " username
+read -p "Enter new group ID: " gid
+echo -e "\n"
+
+usermod -g $gid $username
+
+if [ $? -eq 0 ]; then
+    echo "Group ID for $username changed successfully"
+else
+    echo "Failed to change group ID for $username"
+fi
